@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorry HN 💔</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 1rem;
+      overflow-x: hidden;
+    }
+
+    .container {
+      background: #fff0f5;
+      padding: 2.5rem;
+      border-radius: 30px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      color: #c2185b;
+      font-size: 2.7rem;
+      font-family: 'Pacifico', cursive;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #555;
+    }
+
+    .quotes {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    .quote {
+      margin-bottom: 1.2rem;
+      background: #ffe3ed;
+      padding: 1rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .buttons {
+      margin-top: 2.5rem;
+    }
+
+    .buttons button {
+      background-color: #ff5c8d;
+      color: white;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      margin: 0 0.6rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 20px rgba(255, 92, 141, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    .buttons button:hover {
+      transform: scale(1.1);
+      background-color: #ff3366;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 90%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      font-size: 1.1rem;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I'm Really Sorry, HN 😔</h1>
+    <p>Dear HN,</p>
+    <p>Please forgive me. It won't happen again. I never meant to hurt you, and I value our friendship more than words can say.</p>
+
+    <div class="quotes">
+      <div class="quote">"True friends are never apart, maybe in distance but never in heart."</div>
+      <div class="quote">"A sincere apology is the first step toward healing a broken bond."</div>
+      <div class="quote">"Sorry is just a word, but when I say it, I mean it with all my heart."</div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="showModal('forgive')">Forgive</button>
+      <button onclick="showModal('notForgive')">Not Forgive</button>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script>
+    function showModal(type) {
+      const modal = document.getElementById('modal');
+      const content = document.getElementById('modalContent');
+
+      if (type === 'forgive') {
+        content.innerHTML = `
+          <h2>Thank You, HN 💖</h2>
+          <p>Your forgiveness means the world to me. I’ll cherish it forever and strive to be better every day.</p>
+        `;
+      } else {
+        content.innerHTML = `
+          <h2>Please Don't Say No 😢</h2>
+          <p>I know I made a mistake, but our bond is too precious to break. Please give me one more chance to make it right.</p>
+        `;
+      }
+      modal.style.display = 'flex';
+    }
+
+    document.getElementById('modal').addEventListener('click', function() {
+      this.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
